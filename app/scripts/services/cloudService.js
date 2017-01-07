@@ -7,13 +7,13 @@ angular.module('mpk').factory('cloudService', function($http, $log, $q, $timeout
 		
 		loadSettings: function() {
 			var settings = localStorage.getItem('myPersonalKanban.cloudSettings');
-			if (settings == undefined){
+			if (settings === undefined){
 				this.settings = {notSetup: true, encryptionKey: 'my-random-key'};
 				return this.settings;
 			}
 			this.settings = angular.fromJson(settings);
 			this.settings.notSetup = false;
-			if (this.settings.encryptionKey == undefined){
+			if (this.settings.encryptionKey === undefined){
 				this.settings.encryptionKey = 'my-random-key';
 			}
 			if (this.settings.useLocalCloud){

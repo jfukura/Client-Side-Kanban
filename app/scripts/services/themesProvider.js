@@ -12,11 +12,11 @@ angular.module('mpk').factory('themesProvider', function ($window) {
 		var themeStylesheet = document.getElementById('themeStylesheet');
 		var pathPart = themeStylesheet.href.substr(0, themeStylesheet.href.lastIndexOf('/'));
 
-		themeStylesheet.href = pathPart + "/" + theme + '.css';
+		themeStylesheet.href = pathPart + '/' + theme + '.css';
 		return themeStylesheet.href;
     }, 
     
-    defaultTheme: 'default-bright',
+    defaultTheme: 'default-bright'
   };
 
 });

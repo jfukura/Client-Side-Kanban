@@ -1,30 +1,37 @@
+<!--
+
+TODO: Switch to SCSS
+TODO: Clean the code a little bit (streamline where possible and semantic)
+TODO: Card Stacking ability
+TODO: Sub-lanes?
+TODO: Tagging structure
+
+-->
+
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!-- <html class="no-js"> -->
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
     <meta name="description" content="Personal Kanban Board">
     <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- TODO: Place favicon.ico and apple-touch-icon.png in the root directory -->
 
+        <!-- TODO: Strip bootstrap? -->
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
- 
+
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/spectrum.css">
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
-        
+
         <link rel="stylesheet" href="styles/themes/default-bright.css" id="themeStylesheet">
 </head>
+
 <body ng-app="mpk">
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+
 <div ng-view>
 </div>
 
@@ -65,7 +72,7 @@
             </li>
         </ul>
         <ul class="nav navbar-nav pull-right" id="cloudMenu">
-          <li class="dropdown"> 
+          <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown">Cloud <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a ng-click="cloudMenu.openCloudSetup()" href=""><i class="glyphicon glyphicon-wrench"></i> Setup</a></li>
@@ -141,8 +148,8 @@
                 <input name="columnLimit" type="number" ng-model="model.limit" class="form-control" />
               </div>
             </div>
-          </div> 
-          <hr />         
+          </div>
+          <hr />
           <div class="form-group">
             <button type="button" class="btn btn-sm btn-success" ng-click="addColumn('left')"><i class="glyphicon glyphicon-arrow-left"></i> Add column to the left</button>
             <button type="button" class="btn btn-sm btn-success pull-right" ng-click="addColumn('right')">Add column to the right <i class="glyphicon glyphicon-arrow-right"></i></button>
@@ -229,7 +236,7 @@
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
     </mpk-modal>
-  </div>        
+  </div>
 </div>
 
 <div ng-controller="NewKanbanController">
@@ -265,8 +272,8 @@
           <button type="submit" class="btn btn-primary" ng-click="createNew()">Create new</button>
         </div>
     </form>
-  </mpk-modal> 
-</div>  
+  </mpk-modal>
+</div>
 
 <!-- THIS IS THE HELP -->
 <mpk-modal title="Help" visible="showHelp" modal-style="width:90%">
@@ -279,7 +286,7 @@
         <strong>Cards are created</strong> with <strong>title</strong> and possible longer <strong>description</strong>. You can also <strong>select different colour</strong> for the card if you would like to categorize them somehow. Description will <strong>keep the new line formating</strong> and add <strong>clickable links</strong> if you include any. <br />
         You can <strong>open Card details</strong> by clicking on <strong>card title</strong>.You can <strong>edit Card details</strong> once opened.<br />
         You can <strong>drag card between columns</strong> and move them <strong>up and down</strong> column list.<br /><br />
-        You can have <strong>multiple Kanbans</strong> and open/switch them from the <strong>Switch to ...</strong> dropdown, next to <strong>Cloud Menu</strong>. <br /> 
+        You can have <strong>multiple Kanbans</strong> and open/switch them from the <strong>Switch to ...</strong> dropdown, next to <strong>Cloud Menu</strong>. <br />
           You can <strong>select different style</strong> of Kanban board from <strong>Kanban -> Theme</strong> menu.<br />
           You can <strong>delete</strong> entire Kanban by selecting <strong>Kanban -> Delete</strong> from the menu.<br />
           Your Kanbans are automatically <strong>saved</strong> in your <strong>browser storage</strong>. <br /><br />
@@ -432,9 +439,9 @@
       </div>
       <div class="alert alert-info">
         <p>This key will be used to Encrypt your Kanban when uploading into Cloud and Decrypt when downloading. It can be any number of characters.</p>
-        <p><small>If you make changes to this key, make sure to download latest Kanban from Cloud first and upload after.</small></p> 
+        <p><small>If you make changes to this key, make sure to download latest Kanban from Cloud first and upload after.</small></p>
       </div>
-    
+
       <div class="form-group">
         <label class="control-label">Local Cloud:</label>
         <div>
@@ -453,7 +460,7 @@
           </div>
       </div>
       <div class="alert alert-info" ng-show="model.useLocalCloud">
-        <p><small>You need to specify a valid URL for your Local Cloud service. Please provide hostname with port only (eg. http://localhost:8080). If the URL is valid your Kanban key should validate when you save Cloud settings.</small></p> 
+        <p><small>You need to specify a valid URL for your Local Cloud service. Please provide hostname with port only (eg. http://localhost:8080). If the URL is valid your Kanban key should validate when you save Cloud settings.</small></p>
       </div>
       <div class="modal-footer">
         <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
@@ -467,6 +474,7 @@
 </script>
 <footer></footer>
 
+        <!-- TODO: This seems like an awful lot of scripts -->
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="bower_components/angular/angular.min.js"></script>
         <script src="bower_components/angular-route/angular-route.min.js"></script>
@@ -486,19 +494,19 @@
 
         <script src="scripts/model.js"></script>
         <script src="scripts/app.js"></script>
-        <script src="scripts/services/cloudService.js"></script>        
+        <script src="scripts/services/cloudService.js"></script>
         <script src="scripts/services/kanbanRepository.js"></script>
         <script src="scripts/services/kanbanManipulator.js"></script>
         <script src="scripts/services/themesProvider.js"></script>
         <script src="scripts/services/fileService.js"></script>
-        
+
         <script src="scripts/controllers/ApplicationController.js"></script>
         <script src="scripts/controllers/NewKanbanController.js"></script>
         <script src="scripts/controllers/CardController.js"></script>
         <script src="scripts/controllers/ColumnSettingsController.js"></script>
         <script src="scripts/controllers/NewKanbanCardController.js"></script>
         <script src="scripts/controllers/KanbanController.js"></script>
-        <script src="scripts/controllers/SwitchThemeController.js"></script>  
+        <script src="scripts/controllers/SwitchThemeController.js"></script>
         <script src="scripts/controllers/SetupCloudController.js"></script>
         <script src="scripts/controllers/ExportController.js"></script>
         <script src="scripts/controllers/ImportController.js"></script>
